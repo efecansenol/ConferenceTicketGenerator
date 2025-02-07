@@ -1,0 +1,185 @@
+body {
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("assets/images/background-desktop.png") no-repeat center center/cover;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+    .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background: rgba(42, 42, 64, 0);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    max-width: 90%;
+    margin-top: 43%;
+}
+    input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(42, 42, 64, 0);
+    color: #00ffff;
+    }
+    input::placeholder{
+        font-family: 'Orbitron', sans-serif;
+        color: rgba(0, 255, 255, 0.5); 
+        text-transform: uppercase;
+    }
+    input:focus {
+        outline: 2px solid #6a5acd;
+    }
+    
+    .avatar-upload {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 150px;
+        border: 2px dashed #0ff;
+        border-radius: 10px;
+        cursor: pointer;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.3);
+        position: relative;
+        transition: border-color 0.3s ease-in-out;
+    }
+    
+    .avatar-upload:hover {
+        border-color: #ff00ff;
+    }
+    
+    .avatar-upload input {
+        display: none;
+    }
+    .avatar-upload span {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 12px;
+        color: #0ff;
+        margin-top: 10px;
+        text-shadow: 0 0 5px #0ff, 0 0 10px #00f;
+    }
+    button {
+        font-family: 'Orbitron', sans-serif;
+        background: #6a5acd;
+        color: white;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 0 0 5px #0ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+        transition: background-color 0.3s, text-shadow 0.3s;
+    }
+    button:hover {
+        background: #5a4db8;
+        text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    }   
+    button:focus {
+        outline: none;
+    }    
+    .attribution {
+        position: absolute;
+        bottom:0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0);
+        color:white;
+        }
+    .info{
+        position: absolute;
+        text-align: center;
+        top: 0px;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 30px;
+        color: #0ff;
+        text-transform: uppercase;
+        text-shadow: 0 0 5px #0ff,0 0 10px #00f, 0 0 20px #00f;
+        animation: glitch 0.2s infinite alternate;
+    }
+    @keyframes glitch {
+        0% { text-shadow: 2px 2px #ff00ff; }
+        50% { text-shadow: -2px -2px #00ffff; }
+        100% { text-shadow: 2px 2px #ff00ff; }
+    }
+    .info2{
+        position: absolute;
+        text-align: center;
+        top: 0px;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 20px;
+        color: #0ff;
+        text-transform: uppercase;
+        text-shadow: 0 0 5px #0ff,0 0 10px #00f, 0 0 20px #00f;
+        animation: glitch 0.2s infinite alternate;
+    }
+    #logo{
+        position: absolute;
+        top: 225px;
+        left: 370px;
+        width: 280px;
+    }
+    .form2{
+        position: absolute;
+        top: 280px;
+        left: 370px;
+        width: 280px;
+        font-family: 'Orbitron', sans-serif;
+    }
+    .date{
+        position: absolute;  
+        top: 440px;
+        left: 700px;
+        width: 280px;
+    }
+    .info2 span{
+        color: #a04f4f;
+        text-shadow: 0 0 5px rgb(112, 38, 53),0 0 10px rgb(142, 39, 39), 0 0 20px rgb(139, 40, 40);
+    }
+    strong{
+        color: #00ffff; 
+    }
+    #avatar img{
+    border-radius: 50%;
+    }
+    #ticketNumber {
+        position: absolute;
+        
+        font-family: 'Orbitron', sans-serif;  
+        font-size: 20px;
+        right: 350px;
+        letter-spacing: 2px;
+        color: rgb(167, 20, 165);
+        background-color: rgb(0,0,0,0);
+        padding: 10px 20px;
+        border-radius: 5px;
+        transform: rotate(90deg);
+        transform-origin: center; 
+    }
+    #pattern {
+        display: block; 
+        width: 45%;
+        height: auto; 
+    }
+        
+    
+    
+    

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Conference ticket generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="info">
+    <h1>Your Journey Starts Here !!!</h1>
+    <a>Secure Your Spot at next year's biggest coding conference !!!</a>
+  </div>
+    <form id="form" >
+      <div class="container">
+        <label class="avatar-upload">
+          <input type="file" id="avatar" accept="image/*" onchange="handleFileSelect(event)">
+          <span class="upload-text"></span>
+          <div id="avatar-dropzone" class="avatar-dropzone" ondrop="handleDrop(event)" ondragover="allowDrop(event)">
+            <img src="assets/images/icon-upload.svg" alt="UploadIcon" class="upload-icon">
+            <span>Drag or Select Your Avatar</span>
+        </div>
+        </label>
+        <input type="text" id="fullname" placeholder="FULL NAME">
+        <input type="email" id="email" placeholder="EMAIL ADRESS">
+        <input type="text" id="github" placeholder="GITHUB LINK">
+        <button type="submit" placeholder="Btn-Submit">Generate My Ticket</button>
+      </div>
+    </form>
+    <div class="generate"> </div>
+      <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          const avatar = document.getElementById('avatar').value;
+          const fullname = document.getElementById('fullname').value;
+          const email = document.getElementById('email').value;
+          const github = document.getElementById('github').value;
+          const newPageUrl = `ticket.html?fullname=${encodeURIComponent(fullname)}&email=${encodeURIComponent(email)}&github=${encodeURIComponent(github)}`;
+
+          let errorMessage = "";
+
+          if (!avatar) {
+              errorMessage += "Lütfen bir avatar yükleyin.\n";
+          }
+          if (!fullname) {
+              errorMessage += "Lütfen tam adınızı girin.\n";
+          }
+          if (!email || !email.includes("@") || !email.includes(".")) {
+              errorMessage += "Lütfen geçerli bir e-posta adresi girin.\n";
+          }
+          if (!github) {
+              errorMessage += "Lütfen GitHub kullanıcı adınızı girin.\n";
+          } 
+          if (errorMessage) {
+              alert(errorMessage);
+              return;
+          }
+          else if(!errorMessage){
+            window.location.href = newPageUrl;
+          }
+
+      });
+    </script> 
+  </div>  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Efecan</a>.
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

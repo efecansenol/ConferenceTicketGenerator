@@ -1,0 +1,60 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Ticket</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    </head>
+    <body class="ticket-page">
+        <img src="assets/images/pattern-ticket.svg" alt="Ticket" class="ticket-image" id="pattern">
+        <img src="assets/images/logo-full.svg" alt="Ticket" class="ticket-image2" id="logo">
+        <script src="script.js"></script>
+        <div class="info2">
+            <h1>Congrats, <span id="fullname-header"></span>! Your ticket is ready!!!</h1>
+            <p>We've Emailed your ticket to <span id="email-header"></span><br> and will send updates in the run-up to the event.<br></p>
+        </div>
+        <div class="form2">
+            <a id="avatar"><img id="avatar-img" src="" alt="Avatar" width="80"></a>
+            <p><strong>Full Name:</strong> <span id="fullname-info"></span></p>
+            <p><strong>Email:</strong> <span id="email-info"></span></p>
+            <p><strong>GitHub:</strong> <a id="github" href="#" target="_blank"></a></p>
+        </div>   
+        <div class="date">
+            <p id="current-date"></p>
+        </div>
+        <span id="ticketNumber"></span>
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const avatar = localStorage.getItem('avatar');
+            const fullname = urlParams.get('fullname');
+            const email = urlParams.get('email');
+            const github = urlParams.get('github');
+            
+            console.log("Avatar URL:", avatar);
+            console.log("Full Name:", fullname);
+            console.log("Email:", email);
+            console.log("GitHub:", github);
+            
+            if (avatar) {
+                document.getElementById('avatar-img').src = avatar;
+            }
+            if (fullname) {
+                document.getElementById('fullname-header').textContent = fullname;
+                document.getElementById('fullname-info').textContent = fullname;
+            }
+            if (email) {
+                document.getElementById('email-info').textContent = email;
+                document.getElementById('email-header').textContent = email;
+            }
+            if (github) {
+                document.getElementById('github').textContent = github;
+                document.getElementById('github').href = `https://github.com/${github}`;
+            }
+            const currentDate = new Date().toLocaleDateString();
+            document.getElementById('current-date').textContent = `Date: ${currentDate}`;
+            document.getElementById('ticketNumber').textContent = `#${generateTicketNumber()}`;
+        </script>        
+    </body>
+    </html>
